@@ -1,0 +1,8 @@
+{
+  "name": "Golf Scorecard",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "c1c65800"
+}
