@@ -1,0 +1,26 @@
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-back-button default-href="#" (click)="clear()"></ion-back-button>
+  </ion-buttons>
+  <ion-title>Add Players</ion-title>
+</ion-toolbar>
+<ion-content class="ion-padding">
+  <h1>{{game.type}}</h1>
+  <ion-item>
+    <ion-input id="input" type="text" [(ngModel)]="playerName" name="name" placeholder="Enter name"></ion-input>
+    <ion-button slot="end" (click)="addPlayer()" size="medium" color="success"> <ion-icon name="add-circle-outline"></ion-icon> </ion-button>
+  </ion-item>
+  <br>
+  <ion-list >
+    <ion-list-header>
+      <ion-label>Players</ion-label>
+    </ion-list-header>
+    <ion-item *ngFor="let player of playerList">
+      <ion-label><h2>{{player.name}}</h2></ion-label>
+      <ion-button slot="end" (click)="deletePlayer(player.id)" size="medium" color="danger"> <ion-icon name="trash-outline"></ion-icon> </ion-button>
+    </ion-item>
+  </ion-list>
+  <br>
+  <ion-button expand="block" (click)="confirm()">Confim</ion-button>
+</ion-content>
+

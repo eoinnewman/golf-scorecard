@@ -1,0 +1,145 @@
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-button (click)="back()">BACK</ion-button>
+  </ion-buttons>
+  <ion-title>Leaderboard</ion-title>
+</ion-toolbar>
+<ion-content>
+  <ion-list>
+    <ion-accordion-group>
+      <ion-accordion value="{{player.id}}" *ngFor="let player of game.players">
+        <ion-item slot="header" color="light">
+          <ion-avatar aria-hidden="true" slot="start">
+            <img alt="" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+          </ion-avatar>
+          <ion-label>
+            <h1>{{player.name}}</h1>
+          </ion-label>
+          <ion-label slot="end">
+            <h1>{{player.overallScore}}</h1>
+          </ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          <table>
+            <tr class="hole">
+              <td class="rowCell">
+                  1
+              </td>
+              <td class="rowCell">
+                  2
+              </td>
+              <td class="rowCell">
+                  3
+              </td>
+              <td class="rowCell">
+                  4
+              </td>
+              <td class="rowCell">
+                  5
+              </td>
+              <td class="rowCell">
+                  6
+              </td>
+              <td class="rowCell">
+                  7
+              </td>
+              <td class="rowCell">
+                  8
+              </td>
+              <td class="rowCell">
+                  9
+              </td>
+            </tr>
+            <tr>
+              <td>
+                {{player.holeScore[0]}}
+              </td>
+              <td>
+                {{player.holeScore[1]}}
+              </td>
+              <td>
+                {{player.holeScore[2]}}
+              </td>
+              <td>
+                {{player.holeScore[3]}}
+              </td>
+              <td>
+                {{player.holeScore[4]}}
+              </td>
+              <td>
+                {{player.holeScore[5]}}
+              </td>
+              <td>
+                {{player.holeScore[6]}}
+              </td>
+              <td>
+                {{player.holeScore[7]}}
+              </td>
+              <td>
+                {{player.holeScore[8]}}
+              </td>
+            </tr>
+            <tr class="hole">
+              <td class="rowCell">
+                  10
+              </td>
+              <td class="rowCell">
+                  11
+              </td>
+              <td class="rowCell">
+                  12
+              </td>
+              <td class="rowCell">
+                  13
+              </td>
+              <td class="rowCell">
+                  14
+              </td>
+              <td class="rowCell">
+                  15
+              </td>
+              <td class="rowCell">
+                  16
+              </td>
+              <td class="rowCell">
+                  17
+              </td>
+              <td class="rowCell">
+                  18
+              </td>
+            </tr>
+            <tr>
+              <td>
+                {{player.holeScore[9]}}
+              </td>
+              <td>
+                {{player.holeScore[10]}}
+              </td>
+              <td>
+                {{player.holeScore[11]}}
+              </td>
+              <td>
+                {{player.holeScore[12]}}
+              </td>
+              <td>
+                {{player.holeScore[13]}}
+              </td>
+              <td>
+                {{player.holeScore[14]}}
+              </td>
+              <td>
+                {{player.holeScore[15]}}
+              </td>
+              <td>
+                {{player.holeScore[16]}}
+              </td>
+              <td>
+                {{player.holeScore[17]}}
+              </td>
+            </tr>
+          </table>
+        </div>
+      </ion-accordion>
+    </ion-accordion-group>
+  </ion-list>
+</ion-content>

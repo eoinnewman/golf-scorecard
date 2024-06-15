@@ -7,7 +7,7 @@
       </ion-text>
     </ion-card-header>
       <ion-card-content>
-        <ion-button expand="block" color="dark" fill="outline">VIEW LEADERBOARD<ion-icon name="podium-outline" style="padding-left: 10px;"></ion-icon></ion-button>
+        <ion-button (click)="viewLeaderboard()" expand="block" color="dark" fill="outline">VIEW LEADERBOARD<ion-icon name="podium-outline" style="padding-left: 10px;"></ion-icon></ion-button>
       </ion-card-content>
   </ion-card>
 
@@ -50,10 +50,10 @@
     <ion-grid>
       <ion-row>
         <ion-col>
-          <ion-button expand="block" color="success">New Game</ion-button>
+          <ion-button expand="block" color="success" (click)="newGame()">New Game</ion-button>
         </ion-col>
         <ion-col>
-          <ion-button expand="block" color="danger">Finish Game</ion-button>
+          <ion-button expand="block" color="danger" (click)="finishGame()">Finish Game</ion-button>
         </ion-col>
       </ion-row>
     </ion-grid>

@@ -1,14 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Game } from '../model/game';
 import { Router } from '@angular/router';
 import { StorageService } from '../storage.service';
-import { Game } from '../model/game';
 
 @Component({
-  selector: 'app-tab1',
-  templateUrl: 'tab1.page.html',
-  styleUrls: ['tab1.page.scss']
+  selector: 'app-scoring',
+  templateUrl: './scoring.component.html',
+  styleUrls: ['./scoring.component.scss'],
 })
-export class Tab1Page {
+export class ScoringComponent  implements OnInit {
 
   game: Game = new Game;
 
@@ -39,6 +39,20 @@ export class Tab1Page {
   async lastHole(){
     this.game.holeNumber--;
     await this.storage.setGame('setup', this.game)
+  }
+
+  viewLeaderboard(){
+    this.router.navigate(['leaderboard']);
+  }
+
+  finishGame(){
+    this.router.navigate(['leaderboard']);
+  }
+
+  newGame(){
+    this.storage.clearGame();
+    this.router.navigate(['']);
+    
   }
 
 }
