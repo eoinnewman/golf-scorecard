@@ -10,13 +10,13 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { PlayersComponent } from './players/players.component';
 import { FormsModule } from '@angular/forms';
-import { TabsPageModule } from './tabs/tabs.module';
 import { ScoringComponent } from './scoring/scoring.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
+import { orderByPipe } from './pipe/orderBy.pipe';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent,LeaderboardComponent, PlayersComponent, ScoringComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, IonicStorageModule.forRoot(), FormsModule, TabsPageModule],
+  declarations: [AppComponent, HomeComponent,LeaderboardComponent, PlayersComponent, ScoringComponent, orderByPipe],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, IonicStorageModule.forRoot(), FormsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent, HomeComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

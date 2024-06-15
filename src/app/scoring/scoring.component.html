@@ -2,8 +2,8 @@
 
   <ion-card color="success">
     <ion-card-header>
-      <ion-text style="text-align: center;">
-        <h1><ion-icon name="golf-outline"></ion-icon> HOLE {{game.holeNumber}}</h1>
+      <ion-text style="text-align: left;font-size: 3.85em;">
+        <ion-icon name="golf-outline"></ion-icon> HOLE {{game.holeNumber}}
       </ion-text>
     </ion-card-header>
       <ion-card-content>
@@ -14,12 +14,6 @@
   <ion-grid>
     <ion-row>
       <ion-col><ion-button expand="block" *ngIf="game.holeNumber!=1" (click)="lastHole()" color="light"><ion-icon name="chevron-back-outline"size="large"></ion-icon></ion-button></ion-col>
-      <!-- <ion-col>
-        <div id="container">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Golf_ball.svg/400px-Golf_ball.svg.png?20221009020357">
-          <div id="example"><b><h1 style="text-align: center;">{{game.holeNumber}}</h1></b></div>
-        </div>
-      </ion-col> -->
       <ion-col><ion-button expand="block" *ngIf="game.holeNumber!=18" (click)="nextHole()" color="light"><ion-icon name="chevron-forward-outline" size="large"></ion-icon></ion-button></ion-col>
     </ion-row>
   </ion-grid>
@@ -50,11 +44,11 @@
     <ion-grid>
       <ion-row>
         <ion-col>
-          <ion-button expand="block" color="success" (click)="newGame()">New Game</ion-button>
+          <ion-button expand="block" color="danger" (click)="newGame()">New Game</ion-button>
         </ion-col>
-        <ion-col>
+        <!-- <ion-col>
           <ion-button expand="block" color="danger" (click)="finishGame()">Finish Game</ion-button>
-        </ion-col>
+        </ion-col> -->
       </ion-row>
     </ion-grid>
   </ion-card>

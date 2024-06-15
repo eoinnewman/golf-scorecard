@@ -17,8 +17,7 @@ export class HomeComponent  implements OnInit {
 
   ngOnInit() {}
 
-  async setType(type:string){
-    this.game.type = type;
+  async startGame(){
     await this.storage.setGame('setup', this.game)?.then(res => {
       this.router.navigate(['add-players']);
     });

@@ -33,7 +33,6 @@ export class PlayersComponent  implements OnInit {
     playerDetails.id = Math.random().toString(16).slice(2)
     this.playerList.push(playerDetails);
     this.playerName = null
-    //await this.storage.setGame('setup', this.game);
   }
 
   deletePlayer(id:string) {

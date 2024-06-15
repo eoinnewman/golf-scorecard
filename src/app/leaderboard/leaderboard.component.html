@@ -7,11 +7,11 @@
 <ion-content>
   <ion-list>
     <ion-accordion-group>
-      <ion-accordion value="{{player.id}}" *ngFor="let player of game.players">
+      <ion-accordion value="{{player.id}}" *ngFor="let player of game.players | orderBy: 'overallScore'; index as i">
         <ion-item slot="header" color="light">
-          <ion-avatar aria-hidden="true" slot="start">
-            <img alt="" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
-          </ion-avatar>
+          <ion-label>
+            <h1>{{i+1}}.</h1>
+          </ion-label>
           <ion-label>
             <h1>{{player.name}}</h1>
           </ion-label>
