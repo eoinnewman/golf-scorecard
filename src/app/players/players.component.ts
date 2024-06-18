@@ -20,12 +20,10 @@ export class PlayersComponent  implements OnInit {
   async ngOnInit() {
     await this.storage.getGame('setup')?.then(res => {
       this.game = res;
-      console.log(this.game);
     });
   }
 
   addPlayer() {
-    console.log(this.playerName)
     let playerDetails = new PlayerDetails;
     playerDetails.name = this.playerName;
     playerDetails.overallScore = 0;

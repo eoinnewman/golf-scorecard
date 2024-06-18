@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { StorageService } from '../storage.service';
 import { Game } from '../model/game';
-import { PlayerDetails } from '../model/player-details';
 
 @Component({
   selector: 'app-home',
@@ -15,7 +14,11 @@ export class HomeComponent  implements OnInit {
 
   constructor(private router: Router, private storage: StorageService) { }
 
-  ngOnInit() {}
+  async ngOnInit() {
+    await this.storage.getGame('setup')?.then(res => {
+      this.game = res;
+    });
+  }
 
   async startGame(){
     await this.storage.setGame('setup', this.game)?.then(res => {

@@ -16,6 +16,9 @@
       <ion-col><ion-button expand="block" *ngIf="game.holeNumber!=1" (click)="lastHole()" color="light"><ion-icon name="chevron-back-outline"size="large"></ion-icon></ion-button></ion-col>
       <ion-col><ion-button expand="block" *ngIf="game.holeNumber!=18" (click)="nextHole()" color="light"><ion-icon name="chevron-forward-outline" size="large"></ion-icon></ion-button></ion-col>
     </ion-row>
+    <ion-row *ngIf="game.holeNumber==18">
+      <ion-col><ion-button expand="block" (click)="finishGame()" color="light" color="success">Finish Game <ion-icon name="trophy-outline" style="padding-left: 10px;"></ion-icon></ion-button></ion-col>
+    </ion-row>
   </ion-grid>
 
   <ion-card>
@@ -40,15 +43,18 @@
     </ion-list>
   </ion-card>
 
-  <ion-card>
+  <ion-card class="new-game">
     <ion-grid>
       <ion-row>
         <ion-col>
-          <ion-button expand="block" color="danger" (click)="newGame()">New Game</ion-button>
+          <ion-button expand="block" color="danger" id="present-alert">New Game</ion-button>
+          <ion-alert
+            trigger="present-alert"
+            header="Are you sure you want to start a new game?"
+            [buttons]="alertButtons"
+            (didDismiss)="setResult($event)"
+          ></ion-alert>
         </ion-col>
-        <!-- <ion-col>
-          <ion-button expand="block" color="danger" (click)="finishGame()">Finish Game</ion-button>
-        </ion-col> -->
       </ion-row>
     </ion-grid>
   </ion-card>

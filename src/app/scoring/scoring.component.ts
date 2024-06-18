@@ -41,18 +41,45 @@ export class ScoringComponent  implements OnInit {
     await this.storage.setGame('setup', this.game)
   }
 
-  viewLeaderboard(){
-    this.router.navigate(['leaderboard']);
+  async viewLeaderboard(){
+    await this.storage.setGame('setup', this.game)?.then(res => {
+      this.router.navigate(['leaderboard']);
+    });
   }
 
-  finishGame(){
-    this.router.navigate(['leaderboard']);
+  async finishGame(){
+    await this.storage.setGame('setup', this.game)?.then(res => {
+      this.router.navigate(['leaderboard']);
+    });
   }
 
   newGame(){
     this.storage.clearGame();
     this.router.navigate(['']);
     
+  }
+
+  public alertButtons = [
+    {
+      text: 'Cancel',
+      role: 'cancel',
+      handler: () => {
+        console.log('Alert canceled');
+      },
+    },
+    {
+      text: 'Yes',
+      role: 'confirm',
+      handler: () => {
+        console.log('Alert confirmed');
+      },
+    },
+  ];
+
+  setResult(ev: any) {
+    if(ev.detail.role === 'confirm'){
+      this.newGame()
+    }
   }
 
 }
