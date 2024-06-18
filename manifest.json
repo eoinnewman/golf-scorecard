@@ -1,0 +1,13 @@
+{
+    "name": "Golf Scorecard",
+    "short_name": "GS",
+    "start_url": "index.html",
+    "display": "standalone",
+    "icons": [
+      {
+        "src": "assets/icon/icon.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  }
