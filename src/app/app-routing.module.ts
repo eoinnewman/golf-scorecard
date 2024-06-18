@@ -8,7 +8,7 @@ import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   {
-    path: 'home',
+    path: '',
     component : HomeComponent
   },
   {
