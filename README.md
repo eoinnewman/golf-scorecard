@@ -1,2 +1,3 @@
-#Golf Scorecard
-Built using ionic and angular
+# Golf Scorecard
+
+Built using ionic and angular.
